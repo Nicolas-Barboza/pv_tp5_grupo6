@@ -25,7 +25,7 @@ const linkNuevoStyle = {
 };
 
 const alumnoListWrapperStyle = {
-    paddingTop: '20px',
+    paddingTop: '0px',
 };
 
 
