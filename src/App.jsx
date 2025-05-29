@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import AlumnosList from './views/AlumnosList';
 import DetalleAlumno from './views/DetalleAlumno';
+import AlumnoForm from './views/AlumnoForm';
 
 const initialAlumnosData = [
   { lu: 1001, nombre: "Juan", apellido: "Perez", curso: "Primero", email: "juan@example.com", domicilio: "Av. Siempre Viva 123", telefono: "3884123456" },
@@ -12,9 +13,32 @@ const initialAlumnosData = [
   { lu: 1005, nombre: "Carlos", apellido: "Martinez", curso: "Quinto", email: "carlos@example.com", domicilio: "Calle Falsa 102", telefono: "3884901234" },
   { lu: 1006, nombre: "Laura", apellido: "Fernandez", curso: "Sexto", email: "laura@example.com", domicilio: "Calle Imaginaria 103", telefono: "3884912345" },
 ];
+//En este caso LU puede ser un numero entero entre 1000 y 9999, y no una Nextlu que se va incrementando automáticamente como manejabamos IDs en el anterior tp.
 
 function App() {
   const [alumnos, setAlumnos] = useState(initialAlumnosData);
+
+  const handleGuardarAlumno = useCallback((alumnoData, esEdicion) => {
+        console.log("App.jsx handleGuardarAlumno: esEdicion =", esEdicion, "alumnoData =", alumnoData); 
+
+        if (esEdicion) {
+            // En modo edición, alumnoData.lu es el identificador del alumno a actualizar.
+            setAlumnos(prevAlumnos => {
+                const actualizados = prevAlumnos.map(a =>
+                    a.lu === alumnoData.lu ? { ...alumnoData } : a 
+                );
+                console.log("App.jsx: Alumnos actualizados (edición) =", actualizados); 
+                return actualizados;
+            });
+        } else { // Nuevo alumno
+            // AlumnoForm ya debería haber validado y asignado el LU.
+            setAlumnos(prevAlumnos => {
+                const nuevos = [...prevAlumnos, { ...alumnoData }];
+                console.log("App.jsx: Alumnos actualizados (nuevo) =", nuevos); 
+                return nuevos;
+            });
+        }
+    }, []);
   
   const handleEliminarAlumno = useCallback((luAlumnoAEliminar) => {
         setAlumnos(prevAlumnos =>
@@ -31,6 +55,8 @@ function App() {
             <Routes>
               <Route path="/alumnos" element={<AlumnosList alumnos={alumnos} />} />
               <Route path="/alumnos/:lu" element={<DetalleAlumno alumnos={alumnos} onEliminar={handleEliminarAlumno} />} />
+              <Route path="/alumnos/nuevo" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno}/>} />
+              <Route path="/alumnos/:lu/editar" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno} />} />
             </Routes>
           </div>
         </div>

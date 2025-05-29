@@ -1,0 +1,91 @@
+.formContainerWrapper {
+    max-width: 600px;
+    margin: 30px auto; 
+    padding: 0px;
+
+}
+
+.formContainer {
+    display: block;
+    text-align: center; 
+    padding: 25px 30px; 
+    border: 1px solid #d1d5db; 
+    border-radius: 10px; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.inputGroup { 
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px; 
+}
+
+.inputGroup label { 
+    color: #374151; 
+    font-size: 0.95em;
+    font-weight: 600; 
+    margin-bottom: 5px; 
+}
+
+.inputGroup input[type="text"],
+.inputGroup input[type="email"],
+.inputGroup input[type="tel"],
+.inputGroup input[type="number"] {
+    width: 100%; 
+    padding: 10px 12px;
+    border: 1px solid #d1d5db; 
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup input:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+    outline: none;
+}
+
+.inputGroup input[disabled] {
+    background-color: #e9ecef; 
+    cursor: not-allowed;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 4px;
+}
+
+.buttonContainer { 
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; 
+}
+
+.submitButton { 
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff; 
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+    background-color: #0056b3; 
+}
+
+.cancelButton {
+    composes: submitButton; 
+    background-color: #6c757d; 
+}
+
+.cancelButton:hover {
+    background-color: #5a6268; 
+}
