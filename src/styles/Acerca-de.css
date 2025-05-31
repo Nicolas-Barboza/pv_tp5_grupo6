@@ -1,0 +1,17 @@
+.acercaContainer {
+    margin-top: 80px; /* espacio debajo del navBar */
+    padding: 40px 28px;
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+}
+.h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-Size: 35px,    
+
+}
+.acercaDescripcion {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+

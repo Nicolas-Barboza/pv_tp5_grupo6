@@ -12,7 +12,7 @@ function NavBar() {
                     <Link to="/home" className={Styles.navLink}>Inicio</Link>
                     <Link to="/alumnos" className={Styles.navLink}>Lista de Alumnos</Link>
                     <Link to="/alumnos/nuevo" className={Styles.navLink}>Nuevo Alumno</Link>
-                    <Link to="/acerca-de" className={Styles.navLink}>Acerca de</Link>
+                    <Link to="/acerca" className={Styles.navLink}>Acerca de</Link>
                 </div>
             </div>
         </nav>

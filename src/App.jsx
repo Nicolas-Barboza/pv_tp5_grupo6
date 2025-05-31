@@ -4,6 +4,8 @@ import NavBar from './components/NavBar';
 import AlumnosList from './views/AlumnosList';
 import DetalleAlumno from './views/DetalleAlumno';
 import AlumnoForm from './views/AlumnoForm';
+import Acercade from './views/Acercade';
+import Footer from './components/Footer';
 
 const initialAlumnosData = [
   { lu: 1001, nombre: "Juan", apellido: "Perez", curso: "Primero", email: "juan@example.com", domicilio: "Av. Siempre Viva 123", telefono: "3884123456" },
@@ -57,9 +59,11 @@ function App() {
               <Route path="/alumnos/:lu" element={<DetalleAlumno alumnos={alumnos} onEliminar={handleEliminarAlumno} />} />
               <Route path="/alumnos/nuevo" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno}/>} />
               <Route path="/alumnos/:lu/editar" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno} />} />
+              <Route path="/acerca" element={<Acercade />} />
             </Routes>
           </div>
         </div>
+        <Footer></Footer>
       </Router>
     </div>
   );
