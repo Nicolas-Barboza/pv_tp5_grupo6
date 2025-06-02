@@ -4,7 +4,7 @@ function Acercade() {
 
     return (
     <div className="acercaContainer">
-        <h2>Acerca de</h2>
+        <h2>Trabajo realizado por</h2>
         <p className="acercaDescripcion">
         Esta aplicación fue creada por los alumnos:
         </p>

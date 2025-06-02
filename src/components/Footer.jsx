@@ -1,7 +1,7 @@
 // components/Footer.jsx
 function Footer() {
     const footerStyles = {
-    backgroundImage: 'linear-gradient(to right, #6a11cb 0%, #2575fc 100%)',
+    backgroundImage: 'linear-gradient(to right, #2a3e52 0%, #287eb8 100%)',
     color: 'white',
     textAlign: 'center',
     padding: '14px 0',

@@ -1,17 +1,35 @@
 .acercaContainer {
-    margin-top: 80px; /* espacio debajo del navBar */
-    padding: 40px 28px;
-    font-family: 'Lato', sans-serif;
-    min-height: 100vh;
+    margin-top: 40px;
+    padding: 30px 20px;
+    background-color: #f3f4f6; /* Gris claro */
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.h2{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    font-Size: 35px,    
-
+.acercaContainer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #111827;
 }
 .acercaDescripcion {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    max-width: 700px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #4b5563;
 }
+.acercaContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.acercaContainer li {
+    margin: 10px 0;
+}
+
+.acercaContainer a {
+    color: #1c50c0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
 

@@ -19,7 +19,15 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 15px; 
+    gap: 5px; 
+}
+.inputGroup select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #5a6268;
 }
 
 .inputGroup label { 
@@ -27,6 +35,7 @@
     font-size: 0.95em;
     font-weight: 600; 
     margin-bottom: 5px; 
+    padding: 5px 10px;
 }
 
 .inputGroup input[type="text"],
@@ -71,7 +80,7 @@
     color: white;
     border: none;
     border-radius: 6px;
-    background-color: #007bff; 
+    background-color: #2477ad; 
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.2s ease;

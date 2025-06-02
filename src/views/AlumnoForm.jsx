@@ -127,8 +127,15 @@ function AlumnoForm({ alumnos, onGuardar, generateLU }) {
                         <input type="text" id="apellido" name="apellido" value={alumno.apellido} onChange={handleChange} required placeholder="Apellido del alumno"/>
 
                         <label htmlFor="curso">Curso:</label>
-                        <input type="text" id="curso" name="curso" value={alumno.curso} onChange={handleChange} placeholder="Ej: Tercero"/>
-
+                        <select id="curso" name="curso" value={alumno.curso} onChange={handleChange} required>
+                        <option value="">Seleccione un curso</option>
+                                <option value="Primero">Primero</option>
+                                <option value="Segundo">Segundo</option>
+                                <option value="Tercero">Tercero</option>
+                                <option value="Cuarto">Cuarto</option>
+                                <option value="Quinto">Quinto</option>
+                                <option value="Sexto">Sexto</option>
+                                </select>
                         <label htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" value={alumno.email} onChange={handleChange} required placeholder="correo@ejemplo.com"/>
 
