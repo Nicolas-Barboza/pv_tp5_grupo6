@@ -29,7 +29,7 @@ const alumnoListWrapperStyle = {
 };
 
 
-function AlumnoList({ alumnos }) {
+function AlumnoList({ alumnos ,onEliminarAlumno }) {
     if (!alumnos || alumnos.length === 0) {
         return (
             <div style={alumnoListWrapperStyle}>
@@ -50,6 +50,7 @@ function AlumnoList({ alumnos }) {
                     <AlumnoCard
                         key={alumno.lu}
                         alumno={alumno}
+                        onEliminar={onEliminarAlumno}
                     />
                 ))}
             </div>

@@ -53,10 +53,10 @@ function App() {
       <Router>
         <div className="app-container">
           <NavBar />
-          <main className="content-wrap" style={{ paddingTop: "50px" }}>
+          <main className="content-wrap" style={{ paddingTop: "10px" }}>
              <div className="main-content-area">
             <Routes>
-              <Route path="/alumnos" element={<AlumnosList alumnos={alumnos} />} />
+              <Route path="/alumnos" element={<AlumnosList alumnos={alumnos} onEliminarAlumno={handleEliminarAlumno} />} />
               <Route path="/alumnos/:lu" element={<DetalleAlumno alumnos={alumnos} onEliminar={handleEliminarAlumno} />} />
               <Route path="/alumnos/nuevo" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno}/>} />
               <Route path="/alumnos/:lu/editar" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno} />} />
