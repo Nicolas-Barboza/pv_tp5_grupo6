@@ -51,9 +51,10 @@ function App() {
   return (
     <div>
       <Router>
-        <div>
+        <div className="app-container">
           <NavBar />
-          <div style={{ paddingTop: "50px" }}>
+          <main className="content-wrap" style={{ paddingTop: "50px" }}>
+             <div className="main-content-area">
             <Routes>
               <Route path="/alumnos" element={<AlumnosList alumnos={alumnos} />} />
               <Route path="/alumnos/:lu" element={<DetalleAlumno alumnos={alumnos} onEliminar={handleEliminarAlumno} />} />
@@ -61,9 +62,11 @@ function App() {
               <Route path="/alumnos/:lu/editar" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno} />} />
               <Route path="/acerca" element={<Acercade />} />
             </Routes>
-          </div>
+            </div>
+          </main>
+           <Footer />
         </div>
-        <Footer></Footer>
+       
       </Router>
     </div>
   );
