@@ -1,6 +1,7 @@
 import React, { useState ,useCallback} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Home from './views/Home';
 import AlumnosList from './views/AlumnosList';
 import DetalleAlumno from './views/DetalleAlumno';
 import AlumnoForm from './views/AlumnoForm';
@@ -56,6 +57,7 @@ function App() {
           <main className="content-wrap" style={{ paddingTop: "10px" }}>
              <div className="main-content-area">
             <Routes>
+              <Route path="/" element={<Home />} /> 
               <Route path="/alumnos" element={<AlumnosList alumnos={alumnos} onEliminarAlumno={handleEliminarAlumno} />} />
               <Route path="/alumnos/:lu" element={<DetalleAlumno alumnos={alumnos} onEliminar={handleEliminarAlumno} />} />
               <Route path="/alumnos/nuevo" element={<AlumnoForm alumnos={alumnos} onGuardar={handleGuardarAlumno}/>} />
