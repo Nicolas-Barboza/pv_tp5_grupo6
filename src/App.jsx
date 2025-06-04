@@ -7,6 +7,7 @@ import DetalleAlumno from './views/DetalleAlumno';
 import AlumnoForm from './views/AlumnoForm';
 import Acercade from './views/Acercade';
 import Footer from './components/Footer';
+import Notification from './components/Notification';
 
 const initialAlumnosData = [
   { lu: 1001, nombre: "Juan", apellido: "Perez", curso: "Primero", email: "juan@example.com", domicilio: "Av. Siempre Viva 123", telefono: "3884123456" },
@@ -20,6 +21,11 @@ const initialAlumnosData = [
 
 function App() {
   const [alumnos, setAlumnos] = useState(initialAlumnosData);
+  const [notification, setNotification] = useState(null);
+
+  const mostrarNotification = (mensaje, tipo) => {
+    setNotification({ mensaje, tipo }); 
+  };
 
   const handleGuardarAlumno = useCallback((alumnoData, esEdicion) => {
         console.log("App.jsx handleGuardarAlumno: esEdicion =", esEdicion, "alumnoData =", alumnoData); 
@@ -30,16 +36,16 @@ function App() {
                 const actualizados = prevAlumnos.map(a =>
                     a.lu === alumnoData.lu ? { ...alumnoData } : a 
                 );
-                console.log("App.jsx: Alumnos actualizados (edición) =", actualizados); 
                 return actualizados;
             });
+            mostrarNotification('Alumno editado con éxito', 'success');
         } else { // Nuevo alumno
             // AlumnoForm ya debería haber validado y asignado el LU.
             setAlumnos(prevAlumnos => {
                 const nuevos = [...prevAlumnos, { ...alumnoData }];
-                console.log("App.jsx: Alumnos actualizados (nuevo) =", nuevos); 
                 return nuevos;
             });
+            mostrarNotification('Alumno guardado con éxito', 'success');
         }
     }, []);
   
@@ -47,6 +53,7 @@ function App() {
         setAlumnos(prevAlumnos =>
             prevAlumnos.filter(a => a.lu !== luAlumnoAEliminar)
         );
+        mostrarNotification('Alumno eliminado con éxito', 'error');
     }, []);
 
   return (
@@ -68,8 +75,14 @@ function App() {
           </main>
            <Footer />
         </div>
-       
       </Router>
+      {notification && (
+        <Notification
+          mensaje={notification.mensaje}
+          tipo={notification.tipo}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </div>
   );
 }
