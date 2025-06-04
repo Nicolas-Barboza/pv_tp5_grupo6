@@ -1,0 +1,23 @@
+.custom-footer {
+    background-image: linear-gradient(to right, #2a3e52 0%, #287eb8 100%); /* Degradado original */
+    color: white; 
+    padding: 14px 0; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 0.95em; 
+}
+
+.custom-footer p {
+    margin-bottom: 0; 
+    color: white; 
+}
+
+.social-icon {
+    color: white; 
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; 
+    display: inline-block; 
+}
+
+.social-icon:hover {
+    color: #e0e0e0; 
+    transform: scale(1.15); 
+}
