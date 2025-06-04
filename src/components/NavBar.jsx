@@ -9,7 +9,7 @@ function NavBar() {
             </div>
             <div className={Styles.navSection}>
                 <div className={Styles.navActions}>
-                    <Link to="/home" className={Styles.navLink}>Inicio</Link>
+                    <Link to="/" className={Styles.navLink}>Inicio</Link>
                     <Link to="/alumnos" className={Styles.navLink}>Lista de Alumnos</Link>
                     <Link to="/alumnos/nuevo" className={Styles.navLink}>Nuevo Alumno</Link>
                     <Link to="/acerca-de" className={Styles.navLink}>Acerca de</Link>
