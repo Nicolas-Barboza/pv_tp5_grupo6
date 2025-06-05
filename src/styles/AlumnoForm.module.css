@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 5px; 
+    gap: 0px; 
 }
 .inputGroup select {
     padding: 8px;
@@ -34,7 +34,7 @@
     color: #374151; 
     font-size: 0.95em;
     font-weight: 600; 
-    margin-bottom: 5px; 
+    margin-bottom: 0px; 
     padding: 5px 10px;
 }
 

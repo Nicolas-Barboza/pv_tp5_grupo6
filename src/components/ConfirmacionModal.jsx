@@ -1,14 +1,31 @@
-// ConfirmacionModal.jsx (Componente reutilizable)
-import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-function ConfirmacionModal({ show, onHide, onConfirm, title, message, confirmButtonText = "Confirmar", cancelButtonText = "Cancelar", confirmVariant = "primary" }) {
+function ConfirmacionModal({
+    show,
+    onHide,
+    onConfirm,
+    title,
+    message,
+    confirmButtonText = "Confirmar",
+    cancelButtonText = "Cancelar",
+    confirmVariant = "danger"
+}) {
+    const titleStyle = {
+        overflowWrap: 'break-word', 
+        wordBreak: 'break-word',    
+    };
+
+    const bodyStyle = {
+        overflowWrap: 'break-word',
+        wordBreak: 'break-word'
+    };
+
     return (
         <Modal show={show} onHide={onHide} centered>
             <Modal.Header closeButton>
-                <Modal.Title>{title}</Modal.Title>
+                <Modal.Title style={titleStyle}>{title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{message}</Modal.Body>
+            <Modal.Body style={bodyStyle}>{message}</Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={onHide}>
                     {cancelButtonText}

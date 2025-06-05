@@ -1,40 +1,51 @@
-import '../styles/Home.css';
-import imagen from '../../public/images/FI-foto-fuera.jpg';
-import imagen2 from '../../public/images/logo-fi-unju-institucional-285x159.png';
-import { Link } from 'react-router-dom';
+import Titulo from '../components/Titulo';
+import fotoFacultad from '../assets/images/Fi-foto-fuera.jpg';
+import logoFacultad from '../assets/images/logo-fi-unju-institucional-285x159.png';
 
-function home() {
-
+function Home() {
     return (
-    <div>
-        <div className="HomeContainer">
+        <div className="container mt-4 mb-5">
+            <div className="text-center mb-5">
+                <Titulo texto="Bienvenido al Sistema de Gestión de Alumnos" />
+                <p className="h4 fw-light mt-2">
+                    Facultad de Ingeniería - UNJu
+                </p>
+            </div>
 
-        <div>
-       <h2>Bienvenido al sistema de gestion de Alumnos <br /> de la facultad de ingenieria</h2>
+            <section className="row align-items-center my-5">
+                <div className="col-lg-7">
+                    <p className="lead textohome">
+                        A través de esta aplicación podrá acceder al listado de todos los alumnos que
+                        asisten actualmente a la Facultad de Ingeniería de la Universidad Nacional de Jujuy.
+                        Podrá consultar la información de cada alumno y realizar operaciones
+                        de actualización sobre dicho listado, incluyendo las funciones de: agregar, editar y eliminar alumnos.
+                    </p>
+                </div>
+                <div className="col-lg-5 text-center">
+                    <img
+                        className="img-fluid rounded shadow-sm imagen1"
+                        src={fotoFacultad}
+                        alt="Fachada de la Facultad de Ingeniería de la UNJu"
+                    />
+                </div>
+            </section>
 
-        <p className="textohome">
-        Atraves de esta aplicacion podra acceder al listado de todos los alumnos que <br /> asisten  actualmente a la universidad  nacional  de  ingenieria de san salvador de jujuy  y podra ser  capaz
-        de consultar acerca  de la informacion  de cada  alumno <br /> y podra realizar operaciones  de actualizacion sobre dicho listado incluyendo  <br /> las funciones de: agregar alumnos,editar alumnos y eliminar alumnos
-        </p>
+            <hr />
 
+            <section className="text-center my-5 apartadoenlaces">
+                <p>
+                    Si desea obtener más información acerca de la Facultad de Ingeniería de Jujuy, puede hacer clic en el siguiente logo:
+                </p>
+                <a href="https://www.fi.unju.edu.ar/" target="_blank" rel="noopener noreferrer">
+                    <img
+                        src={logoFacultad}
+                        alt="Logo oficial de la Facultad de Ingeniería - UNJu"
+                        style={{ width: '150px', height: 'auto' }}
+                    />
+                </a>
+            </section>
         </div>
-
-        
-        <img className="imagen1" src={imagen} alt="imagen" />
-
-        </div>
-
-
-        <div className="apartadoenlaces">
-        <p>si desea obtener mas informacion acerca de la facultad nacional de ingenieria de jujuy puede hacer click en el siguiente icono: </p>
-        <Link to="https://www.fi.unju.edu.ar/">
-        <img src={imagen2} alt="imagen2" />
-        </Link>
-        </div>
-
-   
-    </div>
     );
 }
 
-export default home;
+export default Home;

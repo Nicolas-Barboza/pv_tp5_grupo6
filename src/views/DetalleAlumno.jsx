@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Titulo from '../components/Titulo';
 import styles from '../styles/DetalleAlumno.module.css'; 
 
-function DetalleAlumno({ alumnos, onEliminar }) {
+function DetalleAlumno({ alumnos }) {
     const { lu: luParamString } = useParams();
-    const navigate = useNavigate();
     const [alumno, setAlumno] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -25,16 +24,6 @@ function DetalleAlumno({ alumnos, onEliminar }) {
         setLoading(false);
     }, [luParamString, alumnos]);
 
-    const handleEliminarClick = () => {
-        if (alumno && onEliminar) {
-            if (window.confirm(`¿Estás seguro de que deseas eliminar al alumno ${alumno.nombre} ${alumno.apellido} (LU: ${alumno.lu})?`)) {
-                onEliminar(alumno.lu);
-                navigate('/alumnos');
-            }
-        } else if (!onEliminar) {
-            alert("Error: La función de eliminación no está configurada correctamente.");
-        }
-    };
 
     if (loading) {
         return (
@@ -71,11 +60,6 @@ function DetalleAlumno({ alumnos, onEliminar }) {
                 <p className={styles.parrafoDetalle}><strong className={styles.strongDetalle}>Email:</strong> {alumno.email}</p>
                 <p className={styles.parrafoDetalle}><strong className={styles.strongDetalle}>Domicilio:</strong> {alumno.domicilio || "No especificado"}</p>
                 <p className={styles.parrafoDetalle}><strong className={styles.strongDetalle}>Teléfono:</strong> {alumno.telefono || "No especificado"}</p>
-
-                <div className={styles.actionButtonContainer}>
-                    <Link to={`/alumnos/${alumno.lu}/editar`} className={styles.editButton}>Editar Alumno</Link>
-                    <button onClick={handleEliminarClick} className={styles.deleteButton}>Eliminar Alumno</button>
-                </div>
             </div>
 
             <div className={styles.centeredButtonContainer}>
