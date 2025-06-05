@@ -18,7 +18,6 @@ function AlumnoCard({ alumno, onEliminar  }) {
     const handleConfirmarEliminar = () => {
         if (alumno && onEliminar) {
             onEliminar(alumno.lu);
-            navigate('/alumnos');
         }
     };
 
